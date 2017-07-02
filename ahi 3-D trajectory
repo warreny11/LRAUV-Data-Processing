@@ -1,0 +1,20 @@
+fid = fopen('measured_parameter-1ahi.csv');
+for i = 1:3152
+tline = fgetl(fid);
+ 
+idx_1 = find(tline=='(',1);
+ahilon = tline(idx_1+1 : idx_1+21);
+ahilonnum(i) = str2num(ahilon);
+ 
+idx_2 = find(tline==')',1);
+ahilat = tline(idx_2-19 : idx_2-1);
+ahilatnum(i) = str2num(ahilat);
+
+idx_15 = find(tline==',',3);
+idx_16 = find(tline==',',4);
+ahidep = tline(idx_15(3)+1 : idx_16(4)-1);
+ahidepnum(i) = str2num(ahidep);
+
+end
+ 
+plot3(ahilatnum,ahilonnum,-ahidepnum)
