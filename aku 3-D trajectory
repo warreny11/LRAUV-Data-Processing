@@ -1,0 +1,20 @@
+fid = fopen('measured_parameter-2aku.csv');
+for i = 1:297279
+tline = fgetl(fid);
+ 
+idx_8 = find(tline=='(',1);
+akulon = tline(idx_8+1 : idx_8+21);
+akulonnum(i) = str2num(akulon);
+ 
+idx_9 = find(tline==')',1);
+akulat = tline(idx_9-19 : idx_9-1);
+akulatnum(i) = str2num(akulat);
+
+idx_19 = find(tline==',',3);
+idx_20 = find(tline==',',4);
+akudep = tline(idx_19(3)+1 : idx_20(4)-1);
+akudepnum(i) = str2num(akudep);
+
+end
+ 
+plot3(akulatnum,akulonnum,akudepnum)
