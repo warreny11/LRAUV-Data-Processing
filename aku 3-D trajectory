@@ -2,17 +2,17 @@ fid = fopen('measured_parameter-2aku.csv');
 for i = 1:297279
 tline = fgetl(fid);
  
-idx_8 = find(tline=='(',1);
-akulonstr = tline(idx_8+1 : idx_8+21);
+idx_21 = find(tline=='(',1);
+akulonstr = tline(idx_21+1 : idx_21+21);
 akulon(i) = str2num(akulonstr);
  
-idx_9 = find(tline==')',1);
-akulatstr = tline(idx_9-19 : idx_9-1);
+idx_22 = find(tline==')',1);
+akulatstr = tline(idx_22-19 : idx_22-1);
 akulat(i) = str2num(akulatstr);
 
-idx_19 = find(tline==',',3);
-idx_20 = find(tline==',',4);
-akudepstr = tline(idx_19(3)+1 : idx_20(4)-1);
+idx_23 = find(tline==',',3);
+idx_24 = find(tline==',',4);
+akudepstr = tline(idx_23(3)+1 : idx_24(4)-1);
 akudep(i) = str2num(akudepstr);
 
 end
