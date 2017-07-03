@@ -3,18 +3,18 @@ for i = 1:3152
 tline = fgetl(fid);
  
 idx_1 = find(tline=='(',1);
-ahilon = tline(idx_1+1 : idx_1+21);
-ahilonnum(i) = str2num(ahilon);
+ahilonstr = tline(idx_1+1 : idx_1+21);
+ahilon(i) = str2num(ahilonstr);
  
 idx_2 = find(tline==')',1);
-ahilat = tline(idx_2-19 : idx_2-1);
-ahilatnum(i) = str2num(ahilat);
+ahilatstr = tline(idx_2-19 : idx_2-1);
+ahilat(i) = str2num(ahilatstr);
 
 idx_15 = find(tline==',',3);
 idx_16 = find(tline==',',4);
-ahidep = tline(idx_15(3)+1 : idx_16(4)-1);
-ahidepnum(i) = str2num(ahidep);
+ahidepstr = tline(idx_15(3)+1 : idx_16(4)-1);
+ahidep(i) = str2num(ahidepstr);
 
 end
  
-plot3(ahilatnum,ahilonnum,-ahidepnum)
+plot3(ahilat,ahilon,-ahidep)
