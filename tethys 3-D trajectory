@@ -3,19 +3,19 @@ for i = 1:1000000
 tline = fgetl(fid);
 
 idx_4 = find(tline=='(',1);
-tyslon = tline(idx_4+1 : idx_4+21);
-tyslonnum(i) = str2num(tyslon);
+tyslonstr = tline(idx_4+1 : idx_4+21);
+tyslon(i) = str2num(tyslonstr);
 
 idx_5 = find(tline==')',1);
-tyslat = tline(idx_5-19 : idx_5-1);
-tyslatnum(i) = str2num(tyslat);
+tyslatstr = tline(idx_5-19 : idx_5-1);
+tyslat(i) = str2num(tyslatstr);
 
 idx_12 = find(tline==',',3);
 idx_13 = find(tline==',',4);
-tysdep = tline(idx_12(3)+1 : idx_13(4)-1);
-tysdepnum(i) = str2num(tysdep);
+tysdepstr = tline(idx_12(3)+1 : idx_13(4)-1);
+tysdep(i) = str2num(tysdepstr);
 
 end
 
-plot3(tyslonnum, tyslatnum, -tysdepnum)
+plot3(tyslon, tyslat, -tysdep)
 
