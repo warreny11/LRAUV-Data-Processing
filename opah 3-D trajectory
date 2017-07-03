@@ -1,0 +1,20 @@
+fid = fopen('measured_parameter-5opah.csv');
+for i = 1:541573
+tline = fgetl(fid);
+
+idx_51 = find(tline=='(',1);
+opalonstr = tline(idx_51+1 : idx_51+21);
+opalon(i) = str2num(opalonstr);
+
+idx_52 = find(tline==')',1);
+opalatstr = tline(idx_52-19 : idx_52-1);
+opalat(i) = str2num(opalatstr);
+
+idx_53 = find(tline==',',3);
+idx_54 = find(tline==',',4);
+opadepstr = tline(idx_53(3)+1 : idx_54(4)-1);
+opadep(i) = str2num(opadepstr);
+
+end
+
+plot3(opalon, opalat, -opadep)
