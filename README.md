@@ -1,2 +1,3 @@
-# TethysTraj1
-3-D trajectory of tethys (LRAUV)
+# LRAUV Trajectories
+3-D trajectory of LRAUVs (Long Range Autonomous Underwater Vehicles)
+
