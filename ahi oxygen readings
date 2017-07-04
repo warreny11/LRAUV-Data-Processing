@@ -1,0 +1,22 @@
+fid = fopen('measured_parameter-1ahi.csv');
+for i = 1:3152
+tline = fgetl(fid);
+
+i_11 = find(tline==',',1);
+ahidstr = tline(i_11+1 : i_11+1);
+ahid = char(ahidstr);
+
+if ahid == 'o' 
+
+i_12 = find(tline==',',8);
+i_13 = find(tline==',',9);
+ahioxystr = tline(i_12(8)+1 : i_13(9)-1);
+ahioxy(i) = str2num(ahioxystr);
+
+i_14 = find(tline==',',5);
+i_15 = find(tline==',',6);
+ahitimestr = tline(i_14(5)+1 : i_15(6)-1);
+ahitime(i) = datenum(ahitimestr);
+
+end
+end
