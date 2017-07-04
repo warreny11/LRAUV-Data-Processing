@@ -20,3 +20,5 @@ ahitime(i) = datenum(ahitimestr);
 
 end
 end
+
+plot(ahitime,ahioxy)
