@@ -21,7 +21,7 @@ ahitimebig(i) = datenum(ahitimestr);
 end
 end
 
-ahioxy = sparse(ahioxybig);
-ahitime = sparse(ahitimebig);
+ahioxy = nonzeros(ahioxybig);
+ahitime = nonzeros(ahitimebig);
 
 plot(ahitime,ahioxy)
