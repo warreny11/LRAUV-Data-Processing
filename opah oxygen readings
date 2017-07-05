@@ -1,0 +1,28 @@
+fid = fopen('measured_parameter-5opah.csv');
+for i = 1:541573
+tline = fgetl(fid);
+
+i_51 = find(tline==',',1);
+opaidstr = tline(i_51+1 : i_51+1);
+opaid = char(opaidstr);
+
+if opaid == 'o' 
+
+i_52 = find(tline==',',8);
+i_53 = find(tline==',',9);
+opaoxystr = tline(i_52(8)+1 : i_53(9)-1);
+opaoxybig(i) = str2num(opaoxystr);
+
+i_54 = find(tline==',',5);
+i_55 = find(tline==',',6);
+opatimestr = tline(i_54(5)+1 : i_55(6)-1);
+opatimebig(i) = datenum(opatimestr);
+
+end
+end
+
+opaoxy = nonzeros(opaoxybig);
+opatime = nonzeros(opatimebig);
+
+plot(opatime,opaoxy)
+datetick('x','mm-dd-yy HH:MM:SS','keepticks')
