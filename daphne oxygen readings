@@ -1,0 +1,28 @@
+fid = fopen('measured_parameter-3daphne.csv');
+for i = 1:1000000
+tline = fgetl(fid);
+
+i_31 = find(tline==',',1);
+dapidstr = tline(i_31+1 : i_31+1);
+dapid = char(dapidstr);
+
+if dapid == 'o' 
+
+i_32 = find(tline==',',8);
+i_33 = find(tline==',',9);
+dapoxystr = tline(i_32(8)+1 : i_33(9)-1);
+dapoxybig(i) = str2num(dapoxystr);
+
+i_34 = find(tline==',',5);
+i_35 = find(tline==',',6);
+daptimestr = tline(i_34(5)+1 : i_35(6)-1);
+daptimebig(i) = datenum(daptimestr);
+
+end
+end
+
+dapoxy = nonzeros(dapoxybig);
+daptime = nonzeros(daptimebig);
+
+plot(daptime,dapoxy)
+datetick('x','mm-dd-yy HH:MM:SS','keepticks')
