@@ -1,0 +1,28 @@
+fid = fopen('measured_parameter-2aku.csv');
+for i = 1:297279
+tline = fgetl(fid);
+
+i_21 = find(tline==',',1);
+akuidstr = tline(i_21+1 : i_21+1);
+akuid = char(akuidstr);
+
+if akuid == 'o' 
+
+i_22 = find(tline==',',8);
+i_23 = find(tline==',',9);
+akuoxystr = tline(i_22(8)+1 : i_23(9)-1);
+akuoxybig(i) = str2num(akuoxystr);
+
+i_24 = find(tline==',',5);
+i_25 = find(tline==',',6);
+akutimestr = tline(i_24(5)+1 : i_25(6)-1);
+akutimebig(i) = datenum(akutimestr);
+
+end
+end
+
+akuoxy = nonzeros(akuoxybig);
+akutime = nonzeros(akutimebig);
+
+plot(akutime,akuoxy)
+datetick('x','mm-dd-yy HH:MM:SS','keepticks')
