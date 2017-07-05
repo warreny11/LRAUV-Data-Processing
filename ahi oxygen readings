@@ -25,3 +25,4 @@ ahioxy = nonzeros(ahioxybig);
 ahitime = nonzeros(ahitimebig);
 
 plot(ahitime,ahioxy)
+datetick('x','mm-dd-yy HH:MM:SS','keepticks')
