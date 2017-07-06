@@ -15,14 +15,14 @@ doroxybig(i) = str2num(doroxystr);
 
 i_44 = find(tline==',',5);
 i_45 = find(tline==',',6);
-dortimestr = tline(i_44(5)+1 : i_45(6)-1);
-dortimebig(i) = datenum(dortimestr);
+doroxytimestr = tline(i_44(5)+1 : i_45(6)-1);
+doroxytimebig(i) = datenum(doroxytimestr);
 
 end
 end
 
 doroxy = nonzeros(doroxybig);
-dortime = nonzeros(dortimebig);
+doroxytime = nonzeros(doroxytimebig);
 
-plot(dortime,doroxy)
+plot(doroxytime,doroxy)
 datetick('x','mm-dd-yy HH:MM:SS','keepticks')
