@@ -15,14 +15,14 @@ opaoxybig(i) = str2num(opaoxystr);
 
 i_54 = find(tline==',',5);
 i_55 = find(tline==',',6);
-opatimestr = tline(i_54(5)+1 : i_55(6)-1);
-opatimebig(i) = datenum(opatimestr);
+opaoxytimestr = tline(i_54(5)+1 : i_55(6)-1);
+opaoxytimebig(i) = datenum(opaoxytimestr);
 
 end
 end
 
 opaoxy = nonzeros(opaoxybig);
-opatime = nonzeros(opatimebig);
+opaoxytime = nonzeros(opaoxytimebig);
 
-plot(opatime,opaoxy)
+plot(opaoxytime,opaoxy)
 datetick('x','mm-dd-yy HH:MM:SS','keepticks')
