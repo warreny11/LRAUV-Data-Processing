@@ -15,14 +15,14 @@ dapoxybig(i) = str2num(dapoxystr);
 
 i_34 = find(tline==',',5);
 i_35 = find(tline==',',6);
-daptimestr = tline(i_34(5)+1 : i_35(6)-1);
-daptimebig(i) = datenum(daptimestr);
+dapoxytimestr = tline(i_34(5)+1 : i_35(6)-1);
+dapoxytimebig(i) = datenum(dapoxytimestr);
 
 end
 end
 
 dapoxy = nonzeros(dapoxybig);
-daptime = nonzeros(daptimebig);
+dapoxytime = nonzeros(dapoxytimebig);
 
-plot(daptime,dapoxy)
+plot(dapoxytime,dapoxy)
 datetick('x','mm-dd-yy HH:MM:SS','keepticks')
