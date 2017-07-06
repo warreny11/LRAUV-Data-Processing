@@ -15,14 +15,14 @@ tysoxybig(i) = str2num(tysoxystr);
 
 i_64 = find(tline==',',5);
 i_65 = find(tline==',',6);
-tystimestr = tline(i_64(5)+1 : i_65(6)-1);
-tystimebig(i) = datenum(tystimestr);
+tysoxytimestr = tline(i_64(5)+1 : i_65(6)-1);
+tysoxytimebig(i) = datenum(tysoxytimestr);
 
 end
 end
 
 tysoxy = nonzeros(tysoxybig);
-tystime = nonzeros(tystimebig);
+tysoxytime = nonzeros(tysoxytimebig);
 
-plot(tystime,tysoxy)
+plot(tysoxytime,tysoxy)
 datetick('x','mm-dd-yy HH:MM:SS','keepticks')
