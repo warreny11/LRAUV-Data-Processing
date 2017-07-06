@@ -15,14 +15,14 @@ akuoxybig(i) = str2num(akuoxystr);
 
 i_24 = find(tline==',',5);
 i_25 = find(tline==',',6);
-akutimestr = tline(i_24(5)+1 : i_25(6)-1);
-akutimebig(i) = datenum(akutimestr);
+akuoxytimestr = tline(i_24(5)+1 : i_25(6)-1);
+akuoxytimebig(i) = datenum(akuoxytimestr);
 
 end
 end
 
 akuoxy = nonzeros(akuoxybig);
-akutime = nonzeros(akutimebig);
+akuoxytime = nonzeros(akuoxytimebig);
 
-plot(akutime,akuoxy)
+plot(akuoxytime,akuoxy)
 datetick('x','mm-dd-yy HH:MM:SS','keepticks')
