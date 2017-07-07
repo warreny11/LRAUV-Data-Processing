@@ -1,0 +1,28 @@
+fid = fopen('measured_parameter-1ahi.csv');
+for i = 1:3152
+tline = fgetl(fid);
+
+i_11 = find(tline==',',1);
+ahidstr = tline(i_11+1 : i_11+1);
+ahid = char(ahidstr);
+
+if ahid == 's' 
+
+i_12 = find(tline==',',8);
+i_13 = find(tline==',',9);
+ahisalstr = tline(i_12(8)+1 : i_13(9)-1);
+ahisalbig(i) = str2num(ahisalstr);
+
+i_14 = find(tline==',',5);
+i_15 = find(tline==',',6);
+ahisaltimestr = tline(i_14(5)+1 : i_15(6)-1);
+ahisaltimebig(i) = datenum(ahisaltimestr);
+
+end
+end
+
+ahisal = nonzeros(ahioxybig);
+ahisaltime = nonzeros(ahisaltimebig);
+
+plot(ahisaltime,ahisal)
+datetick('x','mm-dd-yy HH:MM:SS','keepticks')
