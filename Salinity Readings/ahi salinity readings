@@ -21,7 +21,7 @@ ahisaltimebig(i) = datenum(ahisaltimestr);
 end
 end
 
-ahisal = nonzeros(ahioxybig);
+ahisal = nonzeros(ahisalbig);
 ahisaltime = nonzeros(ahisaltimebig);
 
 plot(ahisaltime,ahisal)
