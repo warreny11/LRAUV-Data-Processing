@@ -1,28 +1,30 @@
 fid = fopen('measured_parameter-6tethys.csv');
-for i = 1:100
+for i = 1:1000000
 tline = fgetl(fid);
 
 i_61 = find(tline==',',1);
-tysidstr = tline(1 : i_61-1);
-tysid = str2num(tysidstr);
+tyssalid = tline( 1 : i_61-1);
+tyssalidnum(i) = str2double(tyssalid);
+A = 11;
 
-if tysid == 11
+if tyssalidnum(i) == A
+disp(tline(i))
 
-i_62 = find(tline==',',8);
-i_63 = find(tline==',',9);
-tyssalstr = tline(i_62(8)+1 : i_63(9)-1);
-tyssalbig(i) = str2num(tyssalstr);
+i_62 = find(tline==',',9);
+tyssalstr = tline(i_62(8)+1 : i_62(9)-1);
+tyssalbig = str2num(tyssalstr);
 
-i_64 = find(tline==',',5);
-i_65 = find(tline==',',6);
-tyssaltimestr = tline(i_64(5)+1 : i_65(6)-1);
-tyssaltimebig(i) = datenum(tyssaltimestr);
+i_63 = find(tline==',',6);
+tyssaltimestr = tline(i_63(5)+1 : i_63(6)-1);
+tyssaltimebig = datenum(tyssaltimestr);
 
-end
+end 
 end
 
 tyssal = nonzeros(tyssalbig);
 tyssaltime = nonzeros(tyssaltimebig);
 
+figure
 plot(tyssaltime,tyssal)
 datetick('x','mm-dd-yy HH:MM:SS','keepticks')     
+
