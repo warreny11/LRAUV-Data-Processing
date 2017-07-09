@@ -1,4 +1,4 @@
-fid = fopen('measured_parameter-6tethys.csv');
+fid = fopen('measured_parameter-61tethys.csv');
 for i = 1:1000000
 tline = fgetl(fid);
 
@@ -26,4 +26,3 @@ tyssaltime = nonzeros(tyssaltimebig);
 figure
 plot(tyssaltime,tyssal)
 datetick('x','mm-dd-yy HH:MM:SS','keepticks')     
-
