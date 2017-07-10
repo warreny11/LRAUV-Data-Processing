@@ -3,7 +3,7 @@ for i = 1:541573
 tline = fgetl(fid);
 
 i_51 = find(tline==',',9);
-opaoxyid = tline(1 : i_31-1);
+opaoxyid = tline(1 : i_51-1);
 opaoxyidnum = str2double(opaoxyid);
 i_52 = 13;
 
