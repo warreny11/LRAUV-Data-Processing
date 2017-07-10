@@ -4,7 +4,7 @@ tline = fgetl(fid);
 
 i_21 = find(tline==',',9);
 akuchlid = tline(1 : i_21-1);
-akuchlidnum = char(akuchlid);
+akuchlidnum = str2double(akuchlid);
 i_22 = 53;
 
 if akuchlidnum == i_22;
