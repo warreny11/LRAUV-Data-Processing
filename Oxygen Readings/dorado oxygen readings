@@ -2,20 +2,17 @@ fid = fopen('measured_parameter-4dorado.csv');
 for i = 1:1000000
 tline = fgetl(fid);
 
-i_41 = find(tline==',',1);
-doridstr = tline(i_41+1 : i_41+1);
-dorid = char(doridstr);
+i_41 = find(tline==',',9);
+doroxyid = tline(1 : i_31-1);
+doroxyidnum = str2double(doroxyid);
+i_42 = 13;
 
-if dorid == 'o' 
+if doroxyidnum == i_42; 
 
-i_42 = find(tline==',',8);
-i_43 = find(tline==',',9);
-doroxystr = tline(i_42(8)+1 : i_43(9)-1);
+doroxystr = tline(i_41(8)+1 : i_41(9)-1);
 doroxybig(i) = str2num(doroxystr);
 
-i_44 = find(tline==',',5);
-i_45 = find(tline==',',6);
-doroxytimestr = tline(i_44(5)+1 : i_45(6)-1);
+doroxytimestr = tline(i_41(5)+1 : i_41(6)-1);
 doroxytimebig(i) = datenum(doroxytimestr);
 
 end
