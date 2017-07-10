@@ -9,17 +9,17 @@ i_33 = 11;
 
 if dapsalidnum == i_33;
 
-dapoxystr = tline(i_31(8)+1 : i_31(9)-1);
-dapoxybig(i) = str2num(dapoxystr);
+dapsalstr = tline(i_31(8)+1 : i_31(9)-1);
+dapsalbig(i) = str2num(dapsalstr);
 
-dapoxytimestr = tline(i_31(5)+1 : i_31(6)-1);
-dapoxytimebig(i) = datenum(dapoxytimestr);
+dapsaltimestr = tline(i_31(5)+1 : i_31(6)-1);
+dapsaltimebig(i) = datenum(dapsaltimestr);
 
 end
 end
 
-dapoxy = nonzeros(dapoxybig);
-dapoxytime = nonzeros(dapoxytimebig);
+dapsal = nonzeros(dapsalbig);
+dapsaltime = nonzeros(dapsaltimebig);
 
-plot(dapoxytime,dapoxy)
+plot(dapsaltime,dapsal)
 datetick('x','mm-dd-yy HH:MM:SS','keepticks')
