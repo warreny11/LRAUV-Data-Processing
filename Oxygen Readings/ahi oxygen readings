@@ -3,19 +3,18 @@ for i = 1:3152
 tline = fgetl(fid);
 
 i_11 = find(tline==',',1);
-ahidstr = tline(i_11+1 : i_11+1);
-ahid = char(ahidstr);
+ahioxyid = tline( 1 : i_11-1);
+ahioxyidnum(i) = str2double(ahioxyid);
+i_12 = 13;
 
-if ahid == 'o' 
+if ahioxyidnum(i) == i_12
 
-i_12 = find(tline==',',8);
 i_13 = find(tline==',',9);
-ahioxystr = tline(i_12(8)+1 : i_13(9)-1);
+ahioxystr = tline(i_13(8)+1 : i_13(9)-1);
 ahioxybig(i) = str2num(ahioxystr);
 
-i_14 = find(tline==',',5);
-i_15 = find(tline==',',6);
-ahioxytimestr = tline(i_14(5)+1 : i_15(6)-1);
+i_14 = find(tline==',',6);
+ahioxytimestr = tline(i_14(5)+1 : i_14(6)-1);
 ahioxytimebig(i) = datenum(ahioxytimestr);
 
 end
