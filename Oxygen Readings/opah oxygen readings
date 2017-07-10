@@ -7,7 +7,7 @@ opaoxyid = tline(1 : i_51-1);
 opaoxyidnum = str2double(opaoxyid);
 i_52 = 13;
 
-if opaoxyid == i_52; 
+if opaoxyidnum == i_52; 
 
 opaoxystr = tline(i_51(8)+1 : i_51(9)-1);
 opaoxybig(i) = str2num(opaoxystr);
