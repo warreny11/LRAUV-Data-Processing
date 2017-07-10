@@ -2,20 +2,17 @@ fid = fopen('measured_parameter-5opah.csv');
 for i = 1:541573
 tline = fgetl(fid);
 
-i_51 = find(tline==',',1);
-opaidstr = tline(i_51+1 : i_51+1);
-opaid = char(opaidstr);
+i_51 = find(tline==',',9);
+i_52 = 53;
+opachlid = tline(1 : i_51-1);
+opachlidnum = str2double(opachlid);
 
-if opaid == 'c' 
+if opachlidnum == i_52;
 
-i_52 = find(tline==',',8);
-i_53 = find(tline==',',9);
-opachlstr = tline(i_52(8)+1 : i_53(9)-1);
+opachlstr = tline(i_51(8)+1 : i_51(9)-1);
 opachlbig(i) = str2num(opachlstr);
 
-i_54 = find(tline==',',5);
-i_55 = find(tline==',',6);
-opachltimestr = tline(i_54(5)+1 : i_55(6)-1);
+opachltimestr = tline(i_51(5)+1 : i_51(6)-1);
 opachltimebig(i) = datenum(opachltimestr);
 
 end
