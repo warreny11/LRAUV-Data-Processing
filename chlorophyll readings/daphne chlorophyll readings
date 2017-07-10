@@ -2,20 +2,17 @@ fid = fopen('measured_parameter-3daphne.csv');
 for i = 1:1000000
 tline = fgetl(fid);
 
-i_31 = find(tline==',',1);
-dapidstr = tline(i_31+1 : i_31+1);
-dapid = char(dapidstr);
+i_31 = find(tline==',',9);
+i_32 = 53;
+dapchlid = tline(1 : i_31-1);
+dapchlidnum = str2double(dapchlid);
 
-if dapid == 'c' 
+if dapchlidnum == i_32; 
 
-i_32 = find(tline==',',8);
-i_33 = find(tline==',',9);
-dapchlstr = tline(i_32(8)+1 : i_33(9)-1);
+dapchlstr = tline(i_31(8)+1 : i_31(9)-1);
 dapchlbig(i) = str2num(dapchlstr);
 
-i_34 = find(tline==',',5);
-i_35 = find(tline==',',6);
-dapchltimestr = tline(i_34(5)+1 : i_35(6)-1);
+dapchltimestr = tline(i_31(5)+1 : i_31(6)-1);
 dapchltimebig(i) = datenum(dapchltimestr);
 
 end
