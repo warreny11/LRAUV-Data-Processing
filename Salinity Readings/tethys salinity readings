@@ -7,9 +7,9 @@ i_62 = find(tline==',',9);
 i_63 = find(tline==',',6);
 tyssalid = tline( 1 : i_61-1);
 tyssalidnum(i) = str2double(tyssalid);
-A = 11;
+i_64 = 11;
 
-if tyssalidnum(i) == A
+if tyssalidnum(i) == i_64;
 
 tyssalstr = tline(i_62(8)+1 : i_62(9)-1);
 tyssalbig(i) = str2num(tyssalstr);
