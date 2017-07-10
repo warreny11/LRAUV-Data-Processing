@@ -3,7 +3,7 @@ for i = 1:1000000
 tline = fgetl(fid);
 
 i_41 = find(tline==',',9);
-doroxyid = tline(1 : i_31-1);
+doroxyid = tline(1 : i_41-1);
 doroxyidnum = str2double(doroxyid);
 i_42 = 13;
 
