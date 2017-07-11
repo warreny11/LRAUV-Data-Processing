@@ -10,9 +10,8 @@ idx_42 = find(tline==')',1);
 dorlatstr = tline(idx_42-19 : idx_42-1);
 dorlat(i) = str2num(dorlatstr);
 
-idx_43 = find(tline==',',3);
-idx_44 = find(tline==',',4);
-dordepstr = tline(idx_43(3)+1 : idx_44(4)-1);
+idx_43 = find(tline==',',4);
+dordepstr = tline(idx_43(3)+1 : idx_43(4)-1);
 dordep(i) = str2num(dordepstr);
 
 end
