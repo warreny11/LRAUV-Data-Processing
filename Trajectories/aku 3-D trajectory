@@ -10,9 +10,8 @@ idx_22 = find(tline==')',1);
 akulatstr = tline(idx_22-19 : idx_22-1);
 akulat(i) = str2num(akulatstr);
 
-idx_23 = find(tline==',',3);
-idx_24 = find(tline==',',4);
-akudepstr = tline(idx_23(3)+1 : idx_24(4)-1);
+idx_23 = find(tline==',',4);
+akudepstr = tline(idx_23(3)+1 : idx_23(4)-1);
 akudep(i) = str2num(akudepstr);
 
 end
