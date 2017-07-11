@@ -10,9 +10,8 @@ idx_62 = find(tline==')',1);
 tyslatstr = tline(idx_62-19 : idx_62-1);
 tyslat(i) = str2num(tyslatstr);
 
-idx_63 = find(tline==',',3);
-idx_64 = find(tline==',',4);
-tysdepstr = tline(idx_63(3)+1 : idx_64(4)-1);
+idx_63 = find(tline==',',4);
+tysdepstr = tline(idx_63(3)+1 : idx_63(4)-1);
 tysdep(i) = str2num(tysdepstr);
 
 end
