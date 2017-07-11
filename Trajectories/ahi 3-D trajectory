@@ -10,9 +10,8 @@ idx_12 = find(tline==')',1);
 ahilatstr = tline(idx_12-19 : idx_12-1);
 ahilat(i) = str2num(ahilatstr);
 
-idx_13 = find(tline==',',3);
-idx_14 = find(tline==',',4);
-ahidepstr = tline(idx_13(3)+1 : idx_14(4)-1);
+idx_13 = find(tline==',',4);
+ahidepstr = tline(idx_13(3)+1 : idx_13(4)-1);
 ahidep(i) = str2num(ahidepstr);
 
 end
