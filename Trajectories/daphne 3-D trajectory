@@ -10,9 +10,8 @@ idx_32 = find(tline==')',1);
 daplatstr = tline(idx_32-19 : idx_32-1);
 daplat(i) = str2num(daplatstr);
 
-idx_33 = find(tline==',',3);
-idx_34 = find(tline==',',4);
-dapdepstr = tline(idx_33(3)+1 : idx_34(4)-1);
+idx_33 = find(tline==',',4);
+dapdepstr = tline(idx_33(3)+1 : idx_33(4)-1);
 dapdep(i) = str2num(dapdepstr);
  
 end
