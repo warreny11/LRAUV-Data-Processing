@@ -1,0 +1,15 @@
+fid = fopen('measured_parameter-4dorado.csv');
+for i = 1:1000000
+tline = fgetl(fid);
+ 
+i_41 = find(tline==',',6);
+dordepstr = tline(i_41(3)+1 : i_41(4)-1);
+dordep(i) = str2num(dordepstr);
+
+dortimestr = tline(i_41(5)+1 : i_41(6)-1);
+dortime(i) = datenum(dortimestr);
+
+end
+ 
+plot(dortime,-dordep)
+datetick('x','mm-dd-yy HH:MM:SS','keepticks')
