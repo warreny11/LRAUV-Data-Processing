@@ -1,0 +1,15 @@
+fid = fopen('measured_parameter-5opah.csv');
+for i = 1:541573
+tline = fgetl(fid);
+ 
+i_51 = find(tline==',',6);
+opadepstr = tline(i_51(3)+1 : i_51(4)-1);
+opadep(i) = str2num(opadepstr);
+
+opatimestr = tline(i_51(5)+1 : i_51(6)-1);
+opatime(i) = datenum(opatimestr);
+
+end
+ 
+plot(opatime,-opadep)
+datetick('x','mm-dd-yy HH:MM:SS','keepticks')
