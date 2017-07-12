@@ -1,0 +1,14 @@
+fid = fopen('measured_parameter-1ahi.csv');
+for i = 1:3152
+tline = fgetl(fid);
+ 
+i_11 = find(tline==',',6);
+ahidepstr = tline(i_11(3)+1 : i_11(4)-1);
+ahidep(i) = str2num(ahidepstr);
+
+ahitimestr = tline(i_11(5)+1 : i_11(6)-1);
+ahitime(i) = datenum(ahitimestr);
+
+end
+ 
+plot(ahitime,-ahidep)
