@@ -12,3 +12,4 @@ ahitime(i) = datenum(ahitimestr);
 end
  
 plot(ahitime,-ahidep)
+datetick('x','mm-dd-yy HH:MM:SS','keepticks')
