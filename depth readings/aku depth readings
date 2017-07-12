@@ -12,3 +12,4 @@ akutime(i) = datenum(akutimestr);
 end
  
 plot(akutime,-akudep)
+datetick('x','mm-dd-yy HH:MM:SS','keepticks')
