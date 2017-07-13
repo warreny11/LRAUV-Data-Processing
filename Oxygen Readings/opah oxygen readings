@@ -1,5 +1,5 @@
 fid = fopen('measured_parameter-5opah.csv');
-for i = 1:541573
+for i = 1:331691
 tline = fgetl(fid);
 
 i_51 = find(tline==',',9);
