@@ -1,0 +1,23 @@
+fid = fopen('measured_parameter-6tethys.csv');
+for i = 1:1000000
+tline = fgetl(fid);
+
+idx_61 = find(tline=='(',1);
+tyslonstr = tline(idx_61+1 : idx_61+21);
+tyslonbig(i) = str2num(tyslonstr);
+
+idx_62 = find(tline==')',1);
+tyslatstr = tline(idx_62-19 : idx_62-1);
+tyslatbig(i) = str2num(tyslatstr);
+
+idx_63 = find(tline==',',4);
+tysdepstr = tline(idx_63(3)+1 : idx_63(4)-1);
+tysdepbig(i) = str2num(tysdepstr);
+
+end
+
+tyslon1 = tyslonbig([1,diff(tysdepbig)]~=0);
+tyslat1 = tyslatbig([1,diff(tyslatbig)]~=0);
+tysdep1 = tysdepbig([1,diff(tysdepbig)]~=0);
+
+plot3(tyslon1, tyslat1, -tysdep1)
