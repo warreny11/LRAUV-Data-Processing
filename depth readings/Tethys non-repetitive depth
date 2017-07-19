@@ -1,13 +1,24 @@
 fid = fopen('measured_parameter-6tethys.csv');
-for i = 1:1000000
+for i = 1:99999
+a = 2:1000000;
 tline = fgetl(fid);
- 
+
+tysline1 = tline(i); 
+tysline2 = tline(a);
+
 i_61 = find(tline==',',6);
 tysdepstr = tline(i_61(3)+1 : i_61(4)-1);
 tysdep(i) = str2num(tysdepstr);
 
-if -tysdep >= .5
-tysdep = NaN
+tystimestr1 = tysline1(i_61(5)+1 : i_61(6)-1);
+tystime1(i) = datenum(tystimestr1);
+
+tystimestr2 = tysline2(i_61(5)+1 : i_61(6)-1);
+tystime2(a) = datenum(tystimestr2);
+
+if tystime2(a) == tystime1(i)
+tline(i) = NaN
+
 
 end
 end
