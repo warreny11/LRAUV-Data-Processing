@@ -9,3 +9,5 @@ tysdepbig(i) = str2num(tysdepstr);
 end
 
 tysdep = tysdepbig([1,diff(tysdepbig)]~=0);
+tysdep(tysdep<=.5)=NaN;
+
