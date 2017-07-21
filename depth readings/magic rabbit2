@@ -5,6 +5,20 @@ tline = fgetl(fid);
 
 i_61 = find(tline==',',9);
 
+tysdepstr = tline(i_61(3)+1 : i_61(4)-1);
+tysdepbig(i) = str2num(tysdepstr);
+
+end
+
+
+tysdep = tysdepbig([1,diff(tysdepbig)]~=0);
+a = find(tysdep<=.5);
+tysdep(a) = NaN;
+
+
+
+
+
 idx_61 = find(tline=='(',1);
 tyslonstr = tline(idx_61+1 : idx_61+21);
 tyslonbig(i) = str2num(tyslonstr);
@@ -12,9 +26,6 @@ tyslonbig(i) = str2num(tyslonstr);
 idx_62 = find(tline==')',1);
 tyslatstr = tline(idx_62-19 : idx_62-1);
 tyslatbig(i) = str2num(tyslatstr);
-
-tysdepstr = tline(i_61(3)+1 : i_61(4)-1);
-tysdepbig(i) = str2num(tysdepstr);
 
 tyssalid = tline( 1 : i_61-1);
 tyssalidnum(i) = str2double(tyssalid);
@@ -24,9 +35,6 @@ if tyssalidnum(i) == i_62;
 
 tyssalstr = tline(i_61(8)+1 : i_61(9)-1);
 tyssalbig(i) = str2num(tyssalstr);
-
-end
-end
 
 tysdep = tysdepbig([1,diff(tysdepbig)]~=0);
 tyslon = tyslonbig([1,diff(tyslonbig)]~=0);
