@@ -1,0 +1,9 @@
+ahi = importdata('measured_parameter-1ahi.csv');
+for i = 1:3152
+ahi(i);
+
+ahistr(i) = string(ahi(i));
+idx_13 = find(ahistr(i)==',',4);
+ahidepstr = tline(idx_13(3)+1 : idx_13(4)-1);
+ahidep(i) = str2num(ahidepstr);
+end
