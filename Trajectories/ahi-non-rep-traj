@@ -2,8 +2,18 @@ ahi = importdata('measured_parameter-1ahi.csv');
 for i = 1:3152
 ahi(i);
 
-ahistr(i) = string(ahi(i));
-idx_13 = find(ahistr(i)==',',4);
-ahidepstr = tline(idx_13(3)+1 : idx_13(4)-1);
-ahidep(i) = str2num(ahidepstr);
+ahistr(i) = string(ahi(i));%converts cell to string
+ahistr2 = split(ahistr,{' ',',','--'});%splits all strings at commas
+
 end
+end
+
+ahidepstr = ahistr2(:,:,4);
+ahidepnum = str2double(ahidepstr);
+
+if ahidepnum <= 0.5
+ahistr3 = erase(ahistr(i))
+
+ahidepnum(i) = str2num(ahistr(i))
+ahidep = ahidepnum(idx_13(3)+1 : idx_13(4)-1);%does not work because string(i) will give whole string
+idx_13 = strfind(ahistr(i),',');%finds all locations of comma for ahistr(i)
