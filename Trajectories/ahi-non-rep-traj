@@ -17,3 +17,19 @@ ahistr3 = erase(ahistr(i))
 ahidepnum(i) = str2num(ahistr(i))
 ahidep = ahidepnum(idx_13(3)+1 : idx_13(4)-1);%does not work because string(i) will give whole string
 idx_13 = strfind(ahistr(i),',');%finds all locations of comma for ahistr(i)
+
+
+fid = fopen('measured_parameter-1ahi.csv');
+fidd = fopen('measured_parameter-11ahi.csv');
+while ~feof(fid);
+tline = fgets(fid);
+
+idx_13 = find(tline==',',4);
+ahidepstr = tline(idx_13(3)+1 : idx_13(4)-1);
+ahidep = str2num(ahidepstr);
+
+if ahidep <= .5
+else
+fprintf(fidd,tline);
+end
+end
