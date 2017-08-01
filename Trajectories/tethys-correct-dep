@@ -8,6 +8,7 @@ tysdepbig(i) = str2num(tysdepstr);
 
 end
 
-indices = find(tysdepbig<0.5);%should find all values less than 0.5 and delete them
-tysdepbig(indices) = NaN;
+tysdep = tysdepbig([1,diff(tysdepbig)]~=0);%sets tysdep as the non-repeating tysdepbig values
+indices = find(tysdep<0.5);%should find all values less than 0.5 and delete them
+tysdep(indices) = NaN;
 
