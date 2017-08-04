@@ -16,7 +16,7 @@ tysdepbig(i) = str2num(tysdepstr);
 
 end
 %creates vars tyslonbig, tyslatbig, tysdepbig each with 1000000 doubles
-tyslon1 = tyslonbig([1,diff(tysdepbig)]~=0);
+tyslon1 = tyslonbig([1,diff(tyslonbig)]~=0);
 tyslat1 = tyslatbig([1,diff(tyslatbig)]~=0);
 tysdep1 = tysdepbig([1,diff(tysdepbig)]~=0);
 %eliminates extra, identical data points, note : for some reason, the tyslat1 has a different amount of doubles that are matching
