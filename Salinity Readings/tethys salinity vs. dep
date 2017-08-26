@@ -18,7 +18,7 @@ tyssaldepbig(i) = str2num(tyssaldepstr);
 end 
 end
 
-tyssal = tyssalbig([1,diff(tyslonbig)]~=0);
+tyssal = tyssalbig([1,diff(tyssalbig)]~=0);
 tyssaldep = tyssaldepbig([1,diff(tyssaldepbig)]~=0);
 
 figure
