@@ -15,17 +15,17 @@ tysdepstr = tline(idx_63(3)+1 : idx_63(4)-1);
 tysdepbig(i) = str2num(tysdepstr);
 
 end
+
+indices = find(abs(tysdepbig)<=0.5);
+tysdepbig(indices) = NaN;  
+tyslonbig(indices) = NaN;
+tyslatbig(indices) = NaN;%works to eliminate values for which tysdep is less than 0.5
+
 %creates vars tyslonbig, tyslatbig, tysdepbig each with 1000000 doubles
-tyslon1 = tyslonbig([1,diff(tyslonbig)]~=0);
-tyslat1 = tyslatbig([1,diff(tyslatbig)]~=0);
-tysdep1 = tysdepbig([1,diff(tysdepbig)]~=0);
+tyslon = tyslonbig([1,diff(tyslonbig)]~=0);
+tyslat = tyslatbig([1,diff(tyslatbig)]~=0);
+tysdep = tysdepbig([1,diff(tysdepbig)]~=0);
 %eliminates extra, identical data points, note : for some reason, the tyslat1 has a different amount of doubles that are matching
 plot3(tyslon1, tyslat1, -tysdep1)
 
-for i = 1:113216
-if tysdep(i) <= 0.5
-tline = NaN;
-end
-end
 
-%works for one tline
