@@ -28,4 +28,4 @@ tysdep = tysdepbig([1,diff(tysdepbig)]~=0);
 %eliminates extra, identical data points, note : for some reason, the tyslat1 has a different amount of doubles that are matching
 plot3(tyslon,tyslat, -tysdep)
 
-
+%%still doesn't work, need to take a closer look at this
