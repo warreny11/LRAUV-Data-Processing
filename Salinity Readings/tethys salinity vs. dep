@@ -18,8 +18,14 @@ tyssaldepbig(i) = str2num(tyssaldepstr);
 end 
 end
 
-tyssal = tyssalbig([1,diff(tyssalbig)]~=0);
-tyssaldep = tyssaldepbig([1,diff(tyssaldepbig)]~=0);
+tyssal = nonzeros(tyssalbig([1,diff(tyssalbig)]~=0));
+tyssaldep = nonzeros(tyssaldepbig([1,diff(tyssaldepbig)]~=0));
+
+indices = find(abs(tyssaldepbig)<=0.5);
+tyssaldepbig(indices) = NaN;  
+tyssalbig(indices) = NaN;
+
+
 
 figure
 plot(tyssal,tyssaldep,'.--k')
