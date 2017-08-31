@@ -1,0 +1,35 @@
+fid = fopen('measured_parameter-61tethys.csv');
+for i = 1:1000000
+tline = fgetl(fid);
+
+i_61 = find(tline==',',9);
+i_63 = find(tline=='(',1);
+tystmpid = tline( 1 : i_61-1);
+tystmpidnum(i) = str2double(tystmpid);
+i_62 = 10;
+
+if tystmpidnum(i) == i_62;
+
+tystmpstr = tline(i_61(8)+1 : i_61(9)-1);
+tystmpbig(i) = str2num(tystmpstr);
+
+tystmpdepstr = tline(i_61(3)+1 : i_61(4)-1);
+tystmpdepbig(i) = str2num(tystmpdepstr);
+
+tystmplonstr = tline(idx_63+1 : idx_63+21);
+tystmplonbig(i) = str2num(tystmplonstr);
+
+end 
+end
+
+indices = find(abs(tystmpdepbig)<=0.5);
+tystmpdepbig(indices) = NaN; 
+tystmplonbig(indices) = NaN;
+tystmpbig(indices) = NaN;
+
+tystmp = nonzeros(tystmpbig([1,diff(tystmpbig)]~=0));
+tystmpdep = nonzeros(tystmpdepbig([1,diff(tystmpdepbig)]~=0));
+tystmplon = nonzeros(tystmplonbig([1,diff(tystmplonbig)]~=0));
+
+
+plot(tystmp,-tystmpdep,'.--k')
