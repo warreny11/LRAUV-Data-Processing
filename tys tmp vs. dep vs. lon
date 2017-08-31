@@ -16,7 +16,7 @@ tystmpbig(i) = str2num(tystmpstr);
 tystmpdepstr = tline(i_61(3)+1 : i_61(4)-1);
 tystmpdepbig(i) = str2num(tystmpdepstr);
 
-tystmplonstr = tline(idx_63+1 : idx_63+21);
+tystmplonstr = tline(i_63+1 : i_63+21);
 tystmplonbig(i) = str2num(tystmplonstr);
 
 end 
