@@ -25,3 +25,4 @@ tystmpbig(indices) = NaN;
 tystmp = nonzeros(tystmpbig([1,diff(tystmpbig)]~=0));
 tystmpdep = nonzeros(tystmpdepbig([1,diff(tystmpdepbig)]~=0));
 
+plot(tystmp,-tystmpdep,'.--k')
