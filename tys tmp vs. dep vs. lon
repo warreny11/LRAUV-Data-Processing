@@ -33,3 +33,8 @@ tystmplon = nonzeros(tystmplonbig([1,diff(tystmplonbig)]~=0));
 
 
 plot(tystmp,-tystmpdep,'.--k')
+scatter(tystmplon,-tystmpdep,5,tystmp)
+
+
+ ttl1 = find(abs(tystmplon)>=122.3);%gives me the approx turning points of LRAUV
+ 
