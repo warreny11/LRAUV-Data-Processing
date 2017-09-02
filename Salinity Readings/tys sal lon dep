@@ -1,0 +1,36 @@
+fid = fopen('measured_parameter-61tethys.csv');
+for i = 1:1000000
+tline = fgetl(fid);
+
+i_61 = find(tline==',',9);
+i_63 = find(tline=='(',1);
+tyssalid = tline( 1 : i_61-1);
+tyssalidnum(i) = str2double(tyssalid);
+i_62 = 11;
+
+if tyssalidnum(i) == i_62;
+
+tyssalstr = tline(i_61(8)+1 : i_61(9)-1);
+tyssalbig(i) = str2num(tyssalstr);
+
+tyssaldepstr = tline(i_61(3)+1 : i_61(4)-1);
+tyssaldepbig(i) = str2num(tyssaldepstr);
+
+
+tyssallonstr = tline(i_63+1 : i_63+21);
+tyssallonbig(i) = str2num(tyssallonstr);
+
+end 
+end
+
+indices = find(abs(tyssaldepbig)<=0.5);
+tyssaldepbig(indices) = NaN;  
+tyssalbig(indices) = NaN;
+tyssallonbig(indices) = NaN;
+
+tyssal = nonzeros(tyssalbig([1,diff(tyssalbig)]~=0));
+tyssaldep = nonzeros(tyssaldepbig([1,diff(tyssaldepbig)]~=0));
+tyssallon = nonzeros(tyssallonbig([1,diff(tyssallonbig)]~=0));
+
+figure
+scatter(tyssallon,-tyssaldep,5,tyssal)
