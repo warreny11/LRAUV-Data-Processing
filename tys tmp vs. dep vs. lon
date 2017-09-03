@@ -37,5 +37,7 @@ scatter(tystmplon,-tystmpdep,5,tystmp)
 
 
  ttl1 = find(abs(tystmplon)>=122.3);%gives me the approx turning points of LRAUV
+ ttl2 = find(abs(tystmplon)>=122.5);%gives me the approx turning points of LRAUV
+ ttl3 = find(abs(tystmplon)<=122.1);%gives me the approx turning points of LRAUV
  scatter(tystmplon(1:21354),-tystmpdep(1:21354),5,tystmp(1:21354))
  scatter(tystmplon(21375:66412),-tystmpdep(21375:66412),5,tystmp(21375:66412))
