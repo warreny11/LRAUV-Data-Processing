@@ -35,9 +35,18 @@ tystmplon = nonzeros(tystmplonbig([1,diff(tystmplonbig)]~=0));
 plot(tystmp,-tystmpdep,'.--k')
 scatter(tystmplon,-tystmpdep,5,tystmp)
 
+tolerance = 0;
+trans1 = find(diff(tystmplon) > tolerance);
+trans2 = find(diff(tystmplon) < tolerance);
 
  ttl1 = find(abs(tystmplon)>=122.3);%gives me the approx turning points of LRAUV
- ttl2 = find(abs(tystmplon)>=122.5);%gives me the approx turning points of LRAUV
+
  ttl3 = find(abs(tystmplon)<=122.1);%gives me the approx turning points of LRAUV
  scatter(tystmplon(1:21354),-tystmpdep(1:21354),5,tystmp(1:21354))
  scatter(tystmplon(21375:66412),-tystmpdep(21375:66412),5,tystmp(21375:66412))
+
+
+for i = 1:10 
+figure
+scatter(tystmplon(ttl1(i) : ttl1(i+3)),-tystmpdep(ttl1(i) : ttl1(i+3)),5,tystmp(ttl1(i) : ttl1(i+3)))
+end
