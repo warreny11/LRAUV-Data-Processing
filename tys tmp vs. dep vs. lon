@@ -48,7 +48,8 @@ trans2 = find(diff(tystmplon) < tolerance);
 figure
 scatter(tystmplon(1:21350),-tystmpdep(1:21354),10,tystmp(1:21350),'filled')
 figure
-scatter(tystmplon(ttl1(i) : ttl3(i+3)),-tystmpdep(ttl1(i) : ttl3(i+3)),10,tystmp(ttl1(i) : ttl3(i+3)),'filled')
-
+scatter(tystmplon(ttl1(1) : ttl3(1)),-tystmpdep(ttl1(1) : ttl3(1)),10,tystmp(ttl1(1) : ttl3(1)),'filled')
+figure
+scatter(tystmplon(ttl3(1) : ttl1(6)),-tystmpdep(ttl3(1) : ttl1(6)),10,tystmp(ttl3(1) : ttl1(6),'filled')
 
 
