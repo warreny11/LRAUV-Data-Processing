@@ -50,9 +50,9 @@ scatter(tystmplon(1:21350),-tystmpdep(1:21350),10,tystmp(1:21350),'filled')
 figure
 scatter(tystmplon(ttl1(1) : ttl3(1)),-tystmpdep(ttl1(1) : ttl3(1)),10,tystmp(ttl1(1) : ttl3(1)),'filled')
 figure
-scatter(tystmplon(ttl3(1) : ttl1(6)),-tystmpdep(ttl3(1) : ttl1(6)),10,tystmp(ttl3(1) : ttl1(6),'filled')
+scatter(tystmplon(ttl3(1) : ttl1(6)),-tystmpdep(ttl3(1) : ttl1(6)),10,tystmp(ttl3(1) : ttl1(6)),'filled')
 figure
-scatter(tystmplon(ttl1(6) : ttl3(7)),-tystmpdep(ttl1(6) : ttl3(7)),10,tystmp(ttl1(6) : ttl3(7),'filled')
+scatter(tystmplon(ttl1(6) : ttl3(7)),-tystmpdep(ttl1(6) : ttl3(7)),10,tystmp(ttl1(6) : ttl3(7)),'filled')
 
 
 
