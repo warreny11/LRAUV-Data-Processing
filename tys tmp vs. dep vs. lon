@@ -45,14 +45,11 @@ trans2 = find(diff(tystmplon) < tolerance);
  scatter(tystmplon(1:21354),-tystmpdep(1:21354),5,tystmp(1:21354))
  scatter(tystmplon(21375:66412),-tystmpdep(21375:66412),5,tystmp(21375:66412))
 
-figure
-scatter(tystmplon(1:21350),-tystmpdep(1:21350),10,tystmp(1:21350),'filled')
-figure
-scatter(tystmplon(ttl1(1) : ttl3(1)),-tystmpdep(ttl1(1) : ttl3(1)),10,tystmp(ttl1(1) : ttl3(1)),'filled')
-figure
-scatter(tystmplon(ttl3(1) : ttl1(6)),-tystmpdep(ttl3(1) : ttl1(6)),10,tystmp(ttl3(1) : ttl1(6)),'filled')
-figure
-scatter(tystmplon(ttl1(6) : ttl3(7)),-tystmpdep(ttl1(6) : ttl3(7)),10,tystmp(ttl1(6) : ttl3(7)),'filled')
+
+subplot(5,5,1); scatter(tystmplon(1:21350),-tystmpdep(1:21350),10,tystmp(1:21350),'filled'); title('transect 1')
+subplot(5,5,2); scatter(tystmplon(ttl1(1) : ttl3(1)),-tystmpdep(ttl1(1) : ttl3(1)),10,tystmp(ttl1(1) : ttl3(1)),'filled'); title('transect 2')
+subplot(5,5,3); scatter(tystmplon(ttl3(1) : ttl1(6)),-tystmpdep(ttl3(1) : ttl1(6)),10,tystmp(ttl3(1) : ttl1(6)),'filled'); title('transect 3')
+subplot(5,5,4); scatter(tystmplon(ttl1(6) : ttl3(7)),-tystmpdep(ttl1(6) : ttl3(7)),10,tystmp(ttl1(6) : ttl3(7)),'filled'); title('transect 4')
 
 
 
