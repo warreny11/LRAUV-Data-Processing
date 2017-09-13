@@ -4,12 +4,20 @@
 figure
 
 
-sp1 = subplot(3,2,1);scatter(tystmplon(1:21350),-tystmpdep(1:21350),10,tystmp(1:21350),'filled'); title('transect 1 tmp')
+sp1 = subplot(3,2,1);
+scatter(tystmplon(1:21350),-tystmpdep(1:21350),10,tystmp(1:21350),'filled'); 
+title('transect 1 tmp')
 
-sp2 = subplot(3,2,2);scatter(tyssallon(1:21350),-tyssaldep(1:21350),10,tyssal(1:21350),'filled'); title('transect 1 sal')
+sp2 = subplot(3,2,2);
+scatter(tyssallon(1:21350),-tyssaldep(1:21350),10,tyssal(1:21350),'filled');
+caxis([33 33.75])
+title('transect 1 sal')
 
-sp3 = subplot(3,2,3);plot3(tyslon(1:21350),tyslat(1:21350),-tysdep(1:21350)); title('transect 1 traj')
+sp3 = subplot(3,2,3);contour(mblat, mblon, mbbath);
+hold on;
+plot(tyslat(1:21350),tyslon(1:21350)); 
+title('transect 1 traj')
 
-set(sp1,'Position',[.1 .5 .3 .4]); 
-set(sp2,'Position',[.6 .5 .3 .4]);%dist from left, bottom; width, height
-set(sp3,'Position',[.4 .05 .3 .4]); 
+set(sp1,'Position',[.1 .5 .3 .2]); 
+set(sp2,'Position',[.6 .5 .3 .2]);%dist from left, bottom; width, height
+set(sp3,'Position',[.4 .2 .3 .2]); 
