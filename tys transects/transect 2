@@ -1,0 +1,20 @@
+figure
+
+
+sp1 = subplot(3,2,1);
+scatter(tystmplon(21350:42160),-tystmpdep(21350:42160),10,tystmp(21350:42160),'filled'); 
+title('transect 2 tmp')
+
+sp2 = subplot(3,2,2);
+scatter(tyssallon(21350:42160),-tyssaldep(21350:42160),10,tyssal(21350:42160),'filled');
+caxis([32.8 33.6])
+title('transect 2 sal')
+
+sp3 = subplot(3,2,3);contour(mblat, mblon, mbbath);
+hold on;
+plot(tyslat(21350:42160),tyslon(21350:42160)); 
+title('transect 2 traj')
+
+set(sp1,'Position',[.1 .5 .3 .2]); 
+set(sp2,'Position',[.6 .5 .3 .2]);%dist from left, bottom; width, height
+set(sp3,'Position',[.4 .2 .3 .2]); 
