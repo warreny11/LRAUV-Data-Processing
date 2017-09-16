@@ -6,6 +6,7 @@ scatter(tystmplon(21350:42160),-tystmpdep(21350:42160),10,tystmp(21350:42160),'f
 xlabel('longitude')
 ylabel('depth (m)')
 title('transect 2 tmp')
+colorbar
 
 sp2 = subplot(3,2,2);
 scatter(tyssallon(21350:42160),-tyssaldep(21350:42160),10,tyssal(21350:42160),'filled');
@@ -13,6 +14,7 @@ caxis([32.8 33.6])
 xlabel('longitude')
 ylabel('depth (m)')
 title('transect 2 sal')
+colorbar
 
 sp3 = subplot(3,2,3);contour(mblat, mblon, mbbath);
 hold on;
