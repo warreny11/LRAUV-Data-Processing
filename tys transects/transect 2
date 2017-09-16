@@ -10,7 +10,7 @@ colorbar
 
 sp2 = subplot(3,2,2);
 scatter(tyssallon(21350:42160),-tyssaldep(21350:42160),10,tyssal(21350:42160),'filled');
-caxis([32.8 33.6])
+caxis([33 33.6])
 xlabel('longitude')
 ylabel('depth (m)')
 title('transect 2 sal')
@@ -23,8 +23,8 @@ xlabel('latitude')
 ylabel('longitude')
 title('transect 2 traj')
 
-set(fig2,'PaperPositionMode','auto')
-get(fig2,'PaperPosition')
-set(fig2,'PaperSize',[7.7778 5.8333])
-saveas(fig2,'Tys sal tmp trans2','pdf')
+set(fig2,'PaperPositionMode','auto');
+get(fig2,'PaperPosition');
+set(fig2,'PaperSize',[7.7778 5.8333]);
+saveas(fig2,'Tys sal tmp trans2','pdf');
 
