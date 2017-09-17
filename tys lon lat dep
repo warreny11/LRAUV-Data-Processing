@@ -2,15 +2,15 @@ fid = fopen('measured_parameter-6tethys.csv');
 for i = 1:1000000
 tline = fgetl(fid);
 
-idx_61 = find(tline=='(',1);
+idx_61 = find(tline=='(',1); % gets lon
 tyslonstr = tline(idx_61+1 : idx_61+21);
 tyslonbig(i) = str2num(tyslonstr);
 
-idx_62 = find(tline==')',1);
+idx_62 = find(tline==')',1); % gets lat
 tyslatstr = tline(idx_62-19 : idx_62-1);
 tyslatbig(i) = str2num(tyslatstr);
 
-idx_63 = find(tline==',',4);
+idx_63 = find(tline==',',4); % gets depth
 tysdepstr = tline(idx_63(3)+1 : idx_63(4)-1);
 tysdepbig(i) = str2num(tysdepstr);
 
@@ -19,7 +19,7 @@ end
 indices = find(abs(tysdepbig)<=0.5);
 tysdepbig(indices) = NaN;  
 tyslonbig(indices) = NaN;
-tyslatbig(indices) = NaN;%work
+tyslatbig(indices) = NaN;% makes all of the vars the same length
 
 c = tystmp;
 scatter(tyslonbig,tysdepbig,15,c)
