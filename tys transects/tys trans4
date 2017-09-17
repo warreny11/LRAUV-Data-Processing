@@ -1,0 +1,31 @@
+
+%The parameters for each transect come from the variables ttl1 and ttl3 which show the upper and lower bounds of the first few back and forth movements 
+
+fig4 = figure
+
+sp1 = subplot(3,2,1);
+scatter(tystmplon(66430:93560),-tystmpdep(66430:93560),10,tystmp(66430:93560),'filled'); 
+xlabel('longitude')
+ylabel('depth (m)')
+title('transect 4 tmp')
+colorbar
+
+sp2 = subplot(3,2,2);
+scatter(tyssallon(66430:93560),-tyssaldep(66430:93560),10,tyssal(66430:93560),'filled');
+caxis([33 33.6])
+xlabel('longitude')
+ylabel('depth (m)')
+title('transect 4 sal')
+colorbar
+
+sp3 = subplot(3,2,3);contour(mblat, mblon, mbbath);
+hold on;
+plot(tyslat(66430:93560),tyslon(66430:93560)); 
+xlabel('latitude')
+ylabel('longitude')
+title('transect 4 traj')
+
+set(fig3,'PaperPositionMode','auto');
+get(fig3,'PaperPosition');
+set(fig3,'PaperSize',[7.7778 5.8333]);
+saveas(fig3,'Tys sal tmp trans4','pdf')
