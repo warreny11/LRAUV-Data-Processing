@@ -2,14 +2,14 @@ fig3 = figure
 
 
 sp1 = subplot(3,2,1);
-scatter(tystmplon(42160 : 66430),-tystmpdep(42160 : 66430),10,tystmp(42160 : 66430),'filled'); 
+scatter(tystmplon(42160:66430),-tystmpdep(42160:66430),10,tystmp(42160:66430),'filled'); 
 xlabel('longitude')
 ylabel('depth (m)')
 title('transect 3 tmp')
 colorbar
 
 sp2 = subplot(3,2,2);
-scatter(tyssallon(42160 : 66430),-tyssaldep(42160 : 66430),10,tyssal(42160 : 66430),'filled');
+scatter(tyssallon(42160:66430),-tyssaldep(42160:66430),10,tyssal(42160:66430),'filled');
 caxis([33 33.6])
 xlabel('longitude')
 ylabel('depth (m)')
@@ -18,7 +18,7 @@ colorbar
 
 sp3 = subplot(3,2,3);contour(mblat, mblon, mbbath);
 hold on;
-plot(tyslat(42160 : 66430),tyslon(42160 : 66430)); 
+plot(tyslat(42160:66430),tyslon(42160:66430)); 
 xlabel('latitude')
 ylabel('longitude')
 title('transect 3 traj')
