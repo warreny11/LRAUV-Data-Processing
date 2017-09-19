@@ -8,7 +8,7 @@ title('transect 7 tmp')
 colorbar
 
 sp2 = subplot(3,2,2);
-scatter(tyssallon(138590:142500),-tyssaldep(116447:138590),10,tyssal(138590:142500),'filled');
+scatter(tyssallon(138590:142500),-tyssaldep(138590:142500),10,tyssal(138590:142500),'filled');
 caxis([33 33.6])
 xlabel('longitude')
 ylabel('depth (m)')
