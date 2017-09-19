@@ -23,7 +23,7 @@ xlabel('latitude')
 ylabel('longitude')
 title('transect 5 traj')
 
-set(fig3,'PaperPositionMode','auto');
-get(fig3,'PaperPosition');
-set(fig3,'PaperSize',[7.7778 5.8333]);
-saveas(fig3,'Tys sal tmp trans5','pdf')
+set(fig5,'PaperPositionMode','auto');
+get(fig5,'PaperPosition');
+set(fig5,'PaperSize',[7.7778 5.8333]);
+saveas(fig5,'Tys sal tmp trans5','pdf')
