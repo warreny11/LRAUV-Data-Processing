@@ -1,0 +1,28 @@
+fig8 = figure
+
+sp1 = subplot(3,2,1);
+scatter(tystmplon(142500:146725),-tystmpdep(142500:146725),10,tystmp(142500:146725),'filled'); 
+xlabel('longitude')
+ylabel('depth (m)')
+title('transect 8 tmp')
+colorbar
+
+sp2 = subplot(3,2,2);
+scatter(tyssallon(142500:146725),-tyssaldep(142500:146725),10,tyssal(142500:146725),'filled');
+caxis([33 33.6])
+xlabel('longitude')
+ylabel('depth (m)')
+title('transect 8 sal')
+colorbar
+
+sp3 = subplot(3,2,3);contour(mblat, mblon, mbbath);
+hold on;
+plot(tyslat(142500:146725),tyslon(142500:146725)); 
+xlabel('latitude')
+ylabel('longitude')
+title('transect 8 traj')
+
+set(fig6,'PaperPositionMode','auto');
+get(fig6,'PaperPosition');
+set(fig6,'PaperSize',[7.7778 5.8333]);
+saveas(fig8,'Tys sal tmp trans8','pdf')
