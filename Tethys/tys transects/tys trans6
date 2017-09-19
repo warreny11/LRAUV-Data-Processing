@@ -25,4 +25,4 @@ title('transect 6 traj')
 set(fig6,'PaperPositionMode','auto');
 get(fig6,'PaperPosition');
 set(fig6,'PaperSize',[7.7778 5.8333]);
-saveas(fig6,'Tys sal tmp trans5','pdf')
+saveas(fig6,'Tys sal tmp trans6','pdf')
