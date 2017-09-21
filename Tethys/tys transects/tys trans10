@@ -15,11 +15,11 @@ ylabel('depth (m)')
 title('transect 10 sal')
 colorbar
 
-sp3 = subplot(3,2,3);contour(mblat, mblon, mbbath);
+sp3 = subplot(3,2,3); contour(mblon,mblat,mbathtest);
 hold on;
-plot(tyslat(146725:186800),tyslon(146725:186800)); 
-xlabel('latitude')
-ylabel('longitude')
+plot(tyslon(146725:186800),tyslat(146725:186800)); 
+ylabel('latitude')
+xlabel('longitude')
 title('transect 10 traj')
 
 set(fig10,'PaperPositionMode','auto');
