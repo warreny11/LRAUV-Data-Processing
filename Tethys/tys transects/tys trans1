@@ -25,13 +25,29 @@ xlabel('latitude')
 ylabel('longitude')
 title('transect 1 traj')
 
+
 set(fig1,'PaperPositionMode','auto'); %autopositions graphs
 get(fig1,'PaperPosition'); 
 set(fig1,'PaperSize',[7.7778 5.8333]);
 saveas(fig1,'Tys sal tmp trans1','pdf')
 
 
+%%test stuff
+
 fullFileName = fullfile('D:\Dropbox\Matlab\Graphs', 'Tys sal tmp trans1');  
 
 export_fig(fullFileName); 
+
+sp_hand1 = subplot(3,2,1);
+sp_hand3 = subplot(3,2,2);
+sp_hand2 = subplot(3,2,3);
+
+pos1 = get(sp_hand1, 'Position') % gives the position of current sub-plot
+new_pos1 = pos1 +[1 1 1 1]
+set(sp_hand1, 'Position',new_pos1 ) % set new position of current sub - plot
+set(sp_hand3, 'Position',new_pos1 )
+
+pos2 = get(sp_hand2, 'Position')
+new_pos2 = pos2 +[2 0 1 1]
+set(sp_hand2, 'Position',new_pos2 )
 
