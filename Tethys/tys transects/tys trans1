@@ -20,7 +20,7 @@ colorbar
 
 sp3 = subplot(3,2,3);contour(mblat, mblon, mbbath);
 hold on;
-plot(tyslat(1:21350),tyslon(1:21350));
+plot(tystmplat(1:21350),tystmplon(1:21350));
 xlabel('latitude')
 ylabel('longitude')
 title('transect 1 traj')
