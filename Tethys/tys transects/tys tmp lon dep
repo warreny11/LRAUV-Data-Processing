@@ -20,7 +20,7 @@ tystmpdepbig(i) = str2num(tystmpdepstr);
 tystmplonstr = tline(i_63+1 : i_63+21);
 tystmplonbig(i) = str2num(tystmplonstr);
 
-tystmplatstr = tline(idx_62-19 : idx_62-1);
+tystmplatstr = tline(i_62-19 : i_62-1);
 tystmplatbig(i) = str2num(tystmplatstr);
 
 end 
