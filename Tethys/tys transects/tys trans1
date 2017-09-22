@@ -30,3 +30,8 @@ get(fig1,'PaperPosition');
 set(fig1,'PaperSize',[7.7778 5.8333]);
 saveas(fig1,'Tys sal tmp trans1','pdf')
 
+
+fullFileName = fullfile('D:\Dropbox\Matlab\Graphs', 'Tys sal tmp trans1');  
+
+export_fig(fullFileName); 
+
