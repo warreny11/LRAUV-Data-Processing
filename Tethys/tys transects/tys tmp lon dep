@@ -7,9 +7,9 @@ i_62 = find(tline==')',1);
 i_63 = find(tline=='(',1);
 tystmpid = tline( 1 : i_61-1);
 tystmpidnum(i) = str2double(tystmpid);
-i_62 = 10;
+i_64 = 10;
 
-if tystmpidnum(i) == i_62;
+if tystmpidnum(i) == i_64;
 
 tystmpstr = tline(i_61(8)+1 : i_61(9)-1);
 tystmpbig(i) = str2num(tystmpstr);
