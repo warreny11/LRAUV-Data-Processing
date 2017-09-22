@@ -35,7 +35,7 @@ tystmpbig(indices) = NaN;
 tystmp = nonzeros(tystmpbig([1,diff(tystmpbig)]~=0));
 tystmpdep = nonzeros(tystmpdepbig([1,diff(tystmpdepbig)]~=0));
 tystmplon = nonzeros(tystmplonbig([1,diff(tystmplonbig)]~=0));
-tystmplat = nonzeros(tystmplatbig([1,diff(tystmplatbig)]~=0));
+tystmplat = nonzeros(tystmplatbig([1,diff(tystmplatbig)]~=0)); %filters all of the vars for data taken when dep was less than .5m
 
 plot(tystmp,-tystmpdep,'.--k')
 scatter(tystmplon,-tystmpdep,5,tystmp)
