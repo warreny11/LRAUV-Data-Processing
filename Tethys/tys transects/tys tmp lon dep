@@ -3,6 +3,7 @@ for i = 1:1000000
 tline = fgetl(fid);
 
 i_61 = find(tline==',',9);
+i_62 = find(tline==')',1);
 i_63 = find(tline=='(',1);
 tystmpid = tline( 1 : i_61-1);
 tystmpidnum(i) = str2double(tystmpid);
@@ -19,21 +20,27 @@ tystmpdepbig(i) = str2num(tystmpdepstr);
 tystmplonstr = tline(i_63+1 : i_63+21);
 tystmplonbig(i) = str2num(tystmplonstr);
 
+tystmplatstr = tline(idx_62-19 : idx_62-1);
+tystmplatbig(i) = str2num(tystmplatstr);
+
 end 
 end
 
 indices = find(abs(tystmpdepbig)<=0.5);
 tystmpdepbig(indices) = NaN; 
 tystmplonbig(indices) = NaN;
+tystmplatbig(indices) = NaN;
 tystmpbig(indices) = NaN;
 
 tystmp = nonzeros(tystmpbig([1,diff(tystmpbig)]~=0));
 tystmpdep = nonzeros(tystmpdepbig([1,diff(tystmpdepbig)]~=0));
 tystmplon = nonzeros(tystmplonbig([1,diff(tystmplonbig)]~=0));
-
+tystmplat = nonzeros(tystmplatbig([1,diff(tystmplatbig)]~=0));
 
 plot(tystmp,-tystmpdep,'.--k')
 scatter(tystmplon,-tystmpdep,5,tystmp)
+
+
 
 tolerance = 0;
 trans1 = find(diff(tystmplon) > tolerance);
@@ -45,13 +52,4 @@ trans2 = find(diff(tystmplon) < tolerance);
  scatter(tystmplon(1:21354),-tystmpdep(1:21354),5,tystmp(1:21354))
  scatter(tystmplon(21375:66412),-tystmpdep(21375:66412),5,tystmp(21375:66412))
 
-for i = 1:10
 
-subplot(5,5,1); scatter(tystmplon(1:21350),-tystmpdep(1:21350),10,tystmp(1:21350),'filled'); title('transect 1')
-subplot(5,5,2); scatter(tystmplon(ttl1(1) : ttl3(1)),-tystmpdep(ttl1(1) : ttl3(1)),10,tystmp(ttl1(1) : ttl3(1)),'filled'); title('transect 2')
-subplot(5,5,3); scatter(tystmplon(ttl3(1) : ttl1(6)),-tystmpdep(ttl3(1) : ttl1(6)),10,tystmp(ttl3(1) : ttl1(6)),'filled'); title('transect 3')
-subplot(5,5,4); scatter(tystmplon(ttl1(6) : ttl3(7)),-tystmpdep(ttl1(6) : ttl3(7)),10,tystmp(ttl1(6) : ttl3(7)),'filled'); title('transect 4')
-subplot(5,5,5); scatter(tystmplon(ttl1(6) : ttl3(7)),-tystmpdep(ttl1(6) : ttl3(7)),10,tystmp(ttl1(6) : ttl3(7)),'filled'); title('transect 4')
-subplot(5,5,6);
-subplot(5,5,7);
-subplot(5,5,8);
