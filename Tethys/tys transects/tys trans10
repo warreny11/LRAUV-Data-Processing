@@ -15,11 +15,11 @@ ylabel('depth (m)')
 title('transect 10 sal')
 colorbar
 
-sp3 = subplot(3,2,3); contour(mblon,mblat,mbathtest);
+sp3 = subplot(3,2,3);contour(mblon, mblat, mbbath1);
 hold on;
-plot(tyslon(146725:186800),tyslat(146725:186800)); 
-ylabel('latitude')
-xlabel('longitude')
+plot(tystmplon(146725:186800),tystmplat(146725:186800),'.--b'); %because of the non-continuous nature of the new vars for lon and lat, can only plot points?
+xlabel('latitude')
+ylabel('longitude')
 title('transect 10 traj')
 
 set(fig10,'PaperPositionMode','auto');
