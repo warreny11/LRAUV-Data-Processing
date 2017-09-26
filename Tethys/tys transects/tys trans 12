@@ -1,0 +1,28 @@
+fig12 = figure
+
+sp1 = subplot(3,2,1);
+scatter(tystmplon(227900:260300),-tystmpdep(227900:260300),10,tystmp(227900:260300),'filled'); 
+xlabel('longitude')
+ylabel('depth (m)')
+title('transect 12 tmp')
+colorbar
+
+sp2 = subplot(3,2,2);
+scatter(tyssallon(227900:260300),-tyssaldep(227900:260300),10,tyssal(227900:260300),'filled');
+caxis([33 33.6])
+xlabel('longitude')
+ylabel('depth (m)')
+title('transect 12 sal')
+colorbar
+
+sp3 = subplot(3,2,3);contour(mblon, mblat, mbbath1);
+hold on;
+plot(tystmplon(227900:260300),tystmplat(227900:260300),'.--b'); %because of the non-continuous nature of the new vars for lon and lat, can only plot points?
+xlabel('latitude')
+ylabel('longitude')
+title('transect 12 traj')
+
+set(fig12,'PaperPositionMode','auto');
+get(fig12,'PaperPosition');
+set(fig12,'PaperSize',[7.7778 5.8333]);
+saveas(fig12,'Tys sal tmp trans12','pdf')
