@@ -1,8 +1,10 @@
-dep_1 = find(abs(tystmpdep > 25 & tystmpdep < 30));
+dep_1 = find(abs(tystmpdep > 25 & tystmpdep < 30)); %finds all deps between 25m and 30m
 
-tystmpimp = tystmp(dep_1);
-tystmpmen = mean(tystmpimp);
+tystmpimp = tystmp(dep_1); %uses that indices to isolate temp. readings
+tystmpmen = mean(tystmpimp); %finds mean of tmp
 
-tystmpstd = std(tystmpimp);
+tystmpstd = std(tystmpimp); %finds st. dev. of tmp
 
-TF = isoutlier(tystmpimp,tystmpmen)
+figure
+scatter(tystmpdep(dep_1),tystmpimp,5,tystmplon(dep_1),'filled') %plots dep as explanatory var and tmp as response (with lon as color)
+
