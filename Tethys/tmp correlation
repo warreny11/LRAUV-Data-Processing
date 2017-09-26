@@ -1,4 +1,4 @@
-dep_1 = find(abs(tystmpdep > 25 & tystmpdep < 30)); %finds all deps between 25m and 30m
+dep_1 = find(abs(tystmpdep > 15 & tystmpdep < 50)); %finds all deps between 25m and 30m
 
 tystmpimp = tystmp(dep_1); %uses that indices to isolate temp. readings
 tystmpmen = mean(tystmpimp); %finds mean of tmp
@@ -8,3 +8,7 @@ tystmpstd = std(tystmpimp); %finds st. dev. of tmp
 figure
 scatter(tystmpdep(dep_1),tystmpimp,5,tystmplon(dep_1),'filled') %plots dep as explanatory var and tmp as response (with lon as color)
 
+xlabel('depth (m)')
+ylabel('temperature (c)')
+title('Point Temperature at given Depth (for differing longitudes')
+colorbar
