@@ -1,4 +1,8 @@
 dep_1 = find(abs(tystmpdep > 25 & tystmpdep < 30));
 
 tystmpimp = tystmp(dep_1);
+tystmpmen = mean(tystmpimp);
 
+tystmpstd = std(tystmpimp);
+
+TF = isoutlier(tystmpimp,tystmpmen)
