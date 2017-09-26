@@ -1,0 +1,4 @@
+dep_1 = find(abs(tystmpdep > 25 & tystmpdep < 30));
+
+tystmpimp = tystmp(dep_1);
+
