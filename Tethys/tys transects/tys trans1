@@ -1,4 +1,4 @@
-%open file "tys lat lon dep sal tmp" dat in dropbox/matlab/data/
+%open file "tys lat lon dep sal tmp v1.2" dat in dropbox/matlab/data/
 %import vars 
 
 fig1 = figure
@@ -31,8 +31,8 @@ get(fig1,'PaperPosition');
 set(fig1,'PaperSize',[7.7778 5.8333]);
 
 fname = 'D:\Dropbox\Matlab\Graphs';
-filename = '36.8950/-122.3000'
-saveas(fig1, fullfile(fname, filename), 'pdf');
+filename = '04-29-17/06:02:00/36.8950/-122.3000' %end time and position
+saveas(fig1, fullfile(fname, filename), 'pdf'); %uses the specific location and the filename to put graph in the right spot
 
 
 
