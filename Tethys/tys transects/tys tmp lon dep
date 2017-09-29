@@ -23,6 +23,10 @@ tystmplonbig(i) = str2num(tystmplonstr);
 tystmplatstr = tline(i_62-19 : i_62-1);
 tystmplatbig(i) = str2num(tystmplatstr);
 
+
+tystmptimestr = tline(i_61(5)+1 : i_61(6)-1);
+tystmptimebig(i) = datenum(tystmptimestr);
+
 end 
 end
 
@@ -30,12 +34,15 @@ indices = find(abs(tystmpdepbig)<=0.5);
 tystmpdepbig(indices) = NaN; 
 tystmplonbig(indices) = NaN;
 tystmplatbig(indices) = NaN;
+tystmptimebig(indices) = NaN;
 tystmpbig(indices) = NaN;
+
 
 tystmp = nonzeros(tystmpbig([1,diff(tystmpbig)]~=0));
 tystmpdep = nonzeros(tystmpdepbig([1,diff(tystmpdepbig)]~=0));
 tystmplon = nonzeros(tystmplonbig([1,diff(tystmplonbig)]~=0));
 tystmplat = nonzeros(tystmplatbig([1,diff(tystmplatbig)]~=0)); %filters all of the vars for data taken when dep was less than .5m
+tystmptime = nonzeros(tystmptimebig([1,diff(tystmptimebig)]~=0));
 
 plot(tystmp,-tystmpdep,'.--k')
 scatter(tystmplon,-tystmpdep,5,tystmp)
