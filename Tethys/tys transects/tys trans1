@@ -29,9 +29,10 @@ title('transect 1 traj')
 set(fig1,'PaperPositionMode','auto'); %autopositions graphs
 get(fig1,'PaperPosition'); 
 set(fig1,'PaperSize',[7.7778 5.8333]);
+saveas(fig1, '04-29-17,06:02:00,36.8950,-122.3000.pdf', 'pdf')
 
-fname = 'D:\Dropbox\Matlab\Graphs';
-filename = '04-29-17/06:02:00/36.8950/-122.3000' %end time and position
+fname = 'D:\Users\warren\Dropbox\Matlab\Graphs';
+filename = '04-29-17,06:02:00,36.8950,-122.3000'; %end time and position
 saveas(fig1, fullfile(fname, filename), 'pdf'); %uses the specific location and the filename to put graph in the right spot
 
 
