@@ -30,7 +30,7 @@ saveas(fig2, 'vivi_01', 'pdf')%I'm going to have a little fun with the names.. L
 
 fname = 'D:\Users\warren\Dropbox\Matlab\Graphs';
 filename = 'vivi_01'; %end time and position
-saveas(fig1, fullfile(fname, filename), 'pdf'); %uses the specific location and the filename to put graph in the right spot
+saveas(fig2, fullfile(fname, filename), 'pdf'); %uses the specific location and the filename to put graph in the right spot
 
 
 
