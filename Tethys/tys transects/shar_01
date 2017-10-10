@@ -22,11 +22,6 @@ xlabel('latitude')
 ylabel('longitude')
 title('trajectory')
 
-set(fig9,'PaperPositionMode','auto');
-get(fig9,'PaperPosition');
-set(fig9,'PaperSize',[7.7778 5.8333]);
-saveas(fig9,'Tys sal tmp trans9','pdf')
-
 set(fig9,'PaperPositionMode','auto'); %autopositions graphs
 get(fig9,'PaperPosition'); 
 set(fig9,'PaperSize',[7.7778 5.8333]);
