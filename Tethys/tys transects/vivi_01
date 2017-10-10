@@ -23,10 +23,10 @@ xlabel('latitude')
 ylabel('longitude')
 title('trajectory')
 
-set(fig1,'PaperPositionMode','auto'); %autopositions graphs
-get(fig1,'PaperPosition'); 
-set(fig1,'PaperSize',[7.7778 5.8333]);
-saveas(fig1, 'vivi_01', 'pdf')%I'm going to have a little fun with the names.. Let me know if you want/need me to change it back to more conventional titles
+set(fig2,'PaperPositionMode','auto'); %autopositions graphs
+get(fig2,'PaperPosition'); 
+set(fig2,'PaperSize',[7.7778 5.8333]);
+saveas(fig2, 'vivi_01', 'pdf')%I'm going to have a little fun with the names.. Let me know if you want/need me to change it back to more conventional titles
 
 fname = 'D:\Users\warren\Dropbox\Matlab\Graphs';
 filename = 'vivi_01'; %end time and position
