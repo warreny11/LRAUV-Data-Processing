@@ -5,7 +5,7 @@ sp1 = subplot(3,2,1);
 scatter(tystmplon(42160:66430),-tystmpdep(42160:66430),10,tystmp(42160:66430),'filled'); 
 xlabel('longitude')
 ylabel('depth (m)')
-title('transect 3 tmp')
+title('temperature vs. depth')
 colorbar
 
 sp2 = subplot(3,2,2);
@@ -13,7 +13,7 @@ scatter(tyssallon(42160:66430),-tyssaldep(42160:66430),10,tyssal(42160:66430),'f
 caxis([33 33.6])
 xlabel('longitude')
 ylabel('depth (m)')
-title('transect 3 sal')
+title('salinity vs. depth')
 colorbar
 
 sp3 = subplot(3,2,3);contour(mblon, mblat, mbbath1);
@@ -21,9 +21,15 @@ hold on;
 plot(tystmplon(42160:66430),tystmplat(42160:66430),'.--b'); %because of the non-continuous nature of the new vars for lon and lat, can only plot points?
 xlabel('latitude')
 ylabel('longitude')
-title('transect 3 traj')
+title('trajectory')
 
-set(fig3,'PaperPositionMode','auto');
-get(fig3,'PaperPosition');
+set(fig3,'PaperPositionMode','auto'); %autopositions graphs
+get(fig3,'PaperPosition'); 
 set(fig3,'PaperSize',[7.7778 5.8333]);
-saveas(fig3,'Tys sal tmp trans3','pdf')
+saveas(fig3, 'rchl_01', 'pdf')%I'm going to have a little fun with the names.. Let me know if you want/need me to change it back to more conventional titles
+
+fname = 'D:\Users\warren\Dropbox\Matlab\Graphs';
+filename = 'rchl_01'; %end time and position
+saveas(fig3, fullfile(fname, filename), 'pdf'); %uses the specific location and the filename to put graph in the right spot
+
+
