@@ -1,6 +1,5 @@
 %open file "tys lat lon dep sal tmp v1.2" dat in dropbox/matlab/data/
 %import vars 
-
 fig1 = figure
 
 sp1 = subplot(3,2,1); %three subplots in two rows, this is the first subplot
@@ -24,7 +23,6 @@ plot(tystmplon(1:21350),tystmplat(1:21350),'.--b'); %because of the non-continuo
 xlabel('latitude')
 ylabel('longitude')
 title('trajectory')
-
 
 set(fig1,'PaperPositionMode','auto'); %autopositions graphs
 get(fig1,'PaperPosition'); 
