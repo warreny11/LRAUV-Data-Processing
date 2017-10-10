@@ -7,7 +7,7 @@ sp1 = subplot(3,2,1); %three subplots in two rows, this is the first subplot
 scatter(tystmplon(1:21350),-tystmpdep(1:21350),10,tystmp(1:21350),'filled'); %scatter plot
 xlabel('longitude') %labels axis
 ylabel('depth (m)')
-title('transect 1 tmp') %adds title
+title('temperature vs. depth') %adds title
 colorbar %adds colorbar
 
 sp2 = subplot(3,2,2);
@@ -15,7 +15,7 @@ scatter(tyssallon(1:21350),-tyssaldep(1:21350),10,tyssal(1:21350),'filled');
 caxis([33 33.6]) %determines the min and max allowed for values of sal (I checked the overall max with max(tyssal))
 xlabel('longitude')
 ylabel('depth (m)')
-title('transect 1 sal')
+title('salinity vs. depth')
 colorbar
 
 sp3 = subplot(3,2,3);contour(mblon, mblat, mbbath1);
@@ -23,7 +23,7 @@ hold on;
 plot(tystmplon(1:21350),tystmplat(1:21350),'.--b'); %because of the non-continuous nature of the new vars for lon and lat, can only plot points?
 xlabel('latitude')
 ylabel('longitude')
-title('transect 1 traj')
+title('trajectory')
 
 
 set(fig1,'PaperPositionMode','auto'); %autopositions graphs
