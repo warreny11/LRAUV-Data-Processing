@@ -1,6 +1,5 @@
 fig2 = figure
 
-
 sp1 = subplot(3,2,1);
 scatter(tystmplon(21350:42160),-tystmpdep(21350:42160),10,tystmp(21350:42160),'filled'); 
 xlabel('longitude')
