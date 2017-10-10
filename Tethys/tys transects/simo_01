@@ -1,6 +1,3 @@
-
-%The parameters for each transect come from the variables ttl1 and ttl3 which show the upper and lower bounds of the first few back and forth movements 
-
 fig4 = figure
 
 sp1 = subplot(3,2,1);
@@ -32,4 +29,4 @@ saveas(fig4,'simo_01','pdf')%I'm going to have a little fun with the names.. Let
 
 fname = 'D:\Users\warren\Dropbox\Matlab\Graphs';
 filename = 'simo_01'; %end time and position
-saveas(fig9, fullfile(fname, filename), 'pdf');
+saveas(fig4, fullfile(fname, filename), 'pdf');
