@@ -7,7 +7,7 @@ sp1 = subplot(3,2,1);
 scatter(tystmplon(66430:93560),-tystmpdep(66430:93560),10,tystmp(66430:93560),'filled'); 
 xlabel('longitude')
 ylabel('depth (m)')
-title('transect 4 tmp')
+title('temperature vs. depth')
 colorbar
 
 sp2 = subplot(3,2,2);
@@ -15,7 +15,7 @@ scatter(tyssallon(66430:93560),-tyssaldep(66430:93560),10,tyssal(66430:93560),'f
 caxis([33 33.6])
 xlabel('longitude')
 ylabel('depth (m)')
-title('transect 4 sal')
+title('salinity vs. depth')
 colorbar
 
 sp3 = subplot(3,2,3);contour(mblon, mblat, mbbath1);
@@ -23,9 +23,13 @@ hold on;
 plot(tystmplon(66430:93560),tystmplat(66430:93560),'.--b'); %because of the non-continuous nature of the new vars for lon and lat, can only plot points?
 xlabel('latitude')
 ylabel('longitude')
-title('transect 4 traj')
+title('trajectory')
 
 set(fig4,'PaperPositionMode','auto');
 get(fig4,'PaperPosition');
 set(fig4,'PaperSize',[7.7778 5.8333]);
-saveas(fig4,'Tys sal tmp trans4','pdf')
+saveas(fig4,'simo_01','pdf')%I'm going to have a little fun with the names.. Let me know if you want/need me to change it back to more conventional titles
+
+fname = 'D:\Users\warren\Dropbox\Matlab\Graphs';
+filename = 'simo_01'; %end time and position
+saveas(fig9, fullfile(fname, filename), 'pdf');
