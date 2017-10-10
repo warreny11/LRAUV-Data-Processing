@@ -4,7 +4,7 @@ sp1 = subplot(3,2,1);
 scatter(tystmplon(116447:138590),-tystmpdep(116447:138590),10,tystmp(116447:138590),'filled'); 
 xlabel('longitude')
 ylabel('depth (m)')
-title('temperature vs. depth)
+title('temperature vs. depth')
 colorbar
 
 sp2 = subplot(3,2,2);
