@@ -11,6 +11,8 @@ i_64 = 10;
 
 if tystmpidnum(i) == i_64;
 
+tline = fgetl(fid);
+
 tystmpstr = tline(i_61(8)+1 : i_61(9)-1);
 tystmpbig(i) = str2num(tystmpstr);
 
