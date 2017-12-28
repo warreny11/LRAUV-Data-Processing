@@ -12,7 +12,9 @@ i_64 = 10;
 
 if tystmpidnum(i) == i_64;
 
-disp(tline)
+tystmplon1 = tline(i_63+1 : i_63+21);
+
+disp(tystmplon1) %shows all lines with id of 10
 
 end
 end
