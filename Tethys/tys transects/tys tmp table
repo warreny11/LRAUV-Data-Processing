@@ -1,4 +1,4 @@
-fid = fopen('measured_parameter-61tethys.csv');
+fid = fopen('measured_parameter-6.3tethys.csv');
 for i = 1:1000000
 
 tline = fgetl(fid);
@@ -12,9 +12,21 @@ i_64 = 10;
 
 if tystmpidnum(i) == i_64;
 
-tystmplon1 = tline(i_63+1 : i_63+21);
+tystmplonstr = tline(i_63+1 : i_63+21);
+tystmplonbig(i) = str2num(tystmplonstr);
 
-disp(tystmplon1) %shows all lines with id of 10
 
 end
 end
+
+tystmplon = nonzeros(tystmplonbig([1,diff(tystmplonbig)]~=0));
+
+for i = 1:1000000
+if tystmplon(i) <= -122.3
+disp(tystmplon)
+end
+end
+
+%so I want to get all of the longitudes then I can impose some requirements and get it to show me endpoints
+
+disp(tystmplonbig) %shows all lines with id of 10
