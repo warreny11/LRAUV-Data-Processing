@@ -25,7 +25,17 @@ tystmplon = nonzeros(tystmplonbig([1,diff(tystmplonbig)]~=0));%gets rid of zeros
 tystmpmax = findpeaks(tystmplon);
 tystmpmin = -findpeaks(-tystmplon);
 
-[pks,locs] = findpeaks(tystmplon);%gives indices of peaks
+
+[pks,locs] = findpeaks(tystmplon);
+tystmpmax = pks;
+tystmploc = locs;
+[pks,locs] = -findpeaks(-tystmplon);
+tystmpmin = pks;
+tystmploc = locs;
+
+
+
+%gives indices of peaks
 nums = numel(locs);%finds number of peaks
 n = 1;
 while n<=nums %while n is less than number of peaks, searches for max in the range of 1:loc
