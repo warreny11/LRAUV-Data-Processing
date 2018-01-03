@@ -27,7 +27,28 @@ tystmpmaxloc = locs;
 tystmpmin = -pks;
 tystmpminloc = locs;
 
-
+disp(tline(
 %the good thing about this is now I have endpoints of pks and valleys: if I can match them then I can use them as endpoints for table.
 
 disp(tystmplonbig) %shows all lines with id of 10
+
+fid = fopen('measured_parameter-61tethys.csv');
+for i = 1:1000000
+
+tline = fgetl(fid);
+
+i_61 = find(tline==',',9);
+i_62 = find(tline==')',1);
+i_63 = find(tline=='(',1);
+tystmpid = tline( 1 : i_61-1);
+tystmpidnum(i) = str2double(tystmpid);
+i_64 = 10;
+
+n = numel(tystmpidnum);
+
+if tystmpidnum(i) == i_64;
+
+tystlines(n) = tline
+
+end
+end
