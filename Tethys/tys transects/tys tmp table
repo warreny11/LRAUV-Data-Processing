@@ -21,27 +21,22 @@ end
 
 tystmplon = nonzeros(tystmplonbig([1,diff(tystmplonbig)]~=0));%gets rid of zeros which appear as the matlab skips over 
 
+
+tystmpmax = findpeaks(tystmplon);
+tystmpmin = -findpeaks(-tystmplon);
+
 [pks,locs] = findpeaks(tystmplon);%gives indices of peaks
 nums = numel(locs);%finds number of peaks
 n = 1;
 while n<=nums %while n is less than number of peaks, searches for max in the range of 1:loc
 for i = locs(n):locs(n+1)
 tystmpmax(n) = max(tystmplon(locs(n):locs(n+1)));
+tystmpmin(n) = max(-tystmplon(locs(n):locs(n+1)));
 n = n+1;
 end
 end
 
-if tystmplon(locs(n))
 
-end
-tystmpmax = maxk(tystmplon,2)
-
-tystmplon(locs(n))
-for i = 1:length(tystmplon)
-tystmppks = findpeaks(tystmplon); 
-end
-end
-tystmpmax = max(tystmplon)
 
 invtystmplon = -1*tystmplon;
 tystmpmin = findpeaks(invtystmplon) %these two functions will find all peaks or local maximums(to find local min, multiply function by -1)
