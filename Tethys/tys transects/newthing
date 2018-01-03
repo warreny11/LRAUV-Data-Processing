@@ -1,0 +1,9 @@
+fid = fopen('measured_parameter-6.3tethys.csv');
+txt = textscan(fid,'%s','delimiter','\n'); 
+sz = size(txt{1,1});
+
+for i = 1:sz
+
+i_61 = find(txt{1,1}==',',9);
+
+end
