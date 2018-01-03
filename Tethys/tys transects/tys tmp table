@@ -26,7 +26,7 @@ nums = numel(locs);%finds number of peaks
 n = 1;
 while n<=nums %while n is less than number of peaks, searches for max in the range of 1:loc
 for i = locs(n):locs(n+1)
-tystmpmax(n) = max(tystmplon(loc(n):loc(n+1)));
+tystmpmax(n) = max(tystmplon(locs(n):locs(n+1)));
 n = n+1;
 end
 end
