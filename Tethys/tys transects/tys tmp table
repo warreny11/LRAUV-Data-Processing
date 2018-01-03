@@ -12,6 +12,7 @@ i_64 = 10;
 
 if tystmpidnum(i) == i_64;
 
+tystmpline(i) = tline;
 tystmplonstr = tline(i_63+1 : i_63+21);
 tystmplonbig(i) = str2num(tystmplonstr);
 
@@ -27,6 +28,10 @@ tystmpmaxloc = locs;
 [pks,locs] = findpeaks(-tystmplon);
 tystmpmin = -pks;
 tystmpminloc = locs;
+
+
+
+%the good thing about this is now I have endpoints of pks and valleys: if I can match them then I can use them as endpoints for table.
 
 %so I want to get all of the longitudes then I can impose some requirements and get it to show me endpoints
 
