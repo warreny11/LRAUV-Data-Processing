@@ -19,11 +19,26 @@ tystmplonbig(i) = str2num(tystmplonstr);
 end
 end
 
-tystmplon = nonzeros(tystmplonbig([1,diff(tystmplonbig)]~=0));
+tystmplon = nonzeros(tystmplonbig([1,diff(tystmplonbig)]~=0));%gets rid of zeros which appear as the matlab skips over 
 
-for i = 1:1000000
-if tystmplon <= -122.3
-tystmppks = findpeaks(tystmplon) 
+[pks,locs] = findpeaks(tystmplon);%gives indices of peaks
+nums = numel(locs);%finds number of peaks
+n = 1;
+while n<=nums %while n is less than number of peaks, searches for max in the range of 1:loc
+for i = locs(n):locs(n+1)
+tystmpmax = maxk(tystmplon,2)
+n = n+1;
+end
+end
+
+if tystmplon(locs(n))
+
+end
+tystmpmax = maxk(tystmplon,2)
+tystmppks = findpeaks(tystmplon);
+tystmplon(locs(n))
+for i = 1:length(tystmplon)
+tystmppks = findpeaks(tystmplon); 
 end
 end
 
