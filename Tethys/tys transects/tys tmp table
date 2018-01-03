@@ -21,17 +21,12 @@ end
 
 tystmplon = nonzeros(tystmplonbig([1,diff(tystmplonbig)]~=0));%gets rid of zeros which appear as the matlab skips over 
 
-
-tystmpmax = findpeaks(tystmplon);
-tystmpmin = -findpeaks(-tystmplon);
-
-
 [pks,locs] = findpeaks(tystmplon);
 tystmpmax = pks;
-tystmploc = locs;
-[pks,locs] = -findpeaks(-tystmplon);
-tystmpmin = pks;
-tystmploc = locs;
+tystmpmaxloc = locs;
+[pks,locs] = findpeaks(-tystmplon);
+tystmpmin = -pks;
+tystmpminloc = locs;
 
 
 
