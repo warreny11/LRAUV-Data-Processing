@@ -21,30 +21,12 @@ end
 
 tystmplon = nonzeros(tystmplonbig([1,diff(tystmplonbig)]~=0));%gets rid of zeros which appear as the matlab skips over 
 
-[pks,locs] = findpeaks(tystmplon);
+[pks,locs] = findpeaks(tystmplon); %gets the peaks and indices : bottom part gets the valleys and indices
 tystmpmax = pks;
 tystmpmaxloc = locs;
 [pks,locs] = findpeaks(-tystmplon);
 tystmpmin = -pks;
 tystmpminloc = locs;
-
-
-
-%gives indices of peaks
-nums = numel(locs);%finds number of peaks
-n = 1;
-while n<=nums %while n is less than number of peaks, searches for max in the range of 1:loc
-for i = locs(n):locs(n+1)
-tystmpmax(n) = max(tystmplon(locs(n):locs(n+1)));
-tystmpmin(n) = max(-tystmplon(locs(n):locs(n+1)));
-n = n+1;
-end
-end
-
-
-
-invtystmplon = -1*tystmplon;
-tystmpmin = findpeaks(invtystmplon) %these two functions will find all peaks or local maximums(to find local min, multiply function by -1)
 
 %so I want to get all of the longitudes then I can impose some requirements and get it to show me endpoints
 
